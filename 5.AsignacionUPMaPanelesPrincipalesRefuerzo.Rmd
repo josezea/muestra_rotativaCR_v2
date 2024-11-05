@@ -414,6 +414,12 @@ saveRDS(df_entregaMuestraCostaRica, "EntregaMuestraCostaRica6oTrimestres.Rds")
 
 
 ```{r}
+comprobacion <- table(df_upmEnpaneles_consolidado$panel) %>% as.data.frame() 
+names(comprobacion) <- c("Panel", "NumUPMs")
+```
 
+```{r}
+setwd("output/Resultados/5.AsignacionUPMaPanelesPrincipalesRefuerzo")
+write_xlsx(comprobacion, "comprobacionNumUPMPanelIgual.xlsx")
 ```
 
